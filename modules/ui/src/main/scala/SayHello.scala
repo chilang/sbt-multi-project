@@ -1,8 +1,10 @@
 package com.chilang
 
 object SayHello extends Application with Core {
-  println(sayHello("world"))
+  val javaNamed = new Named {
+    def name = "Java"
+  }
+  println(sayHello(javaNamed))
 
-  def sayHello(name: _root_.scala.Predef.String) = "Hello "+name
-
+  def sayHello(named: Named) = "Scala say hello to: "+named.name
 }
